@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Micro+5&display=swap');
+
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Micro 5', sans-serif;
+  background: black;
+}
+
+/* === CANVAS === */
+canvas {
+  display: block;
+  margin: 0 auto;
+  max-width: 100vw;
+  max-height: 100vh;
+}
+
+/* === HUD / UI TEXT === */
+#hud {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: white;
+  font-size: 1.2em;
+  text-shadow: 1px 1px 4px black;
+  z-index: 10;
+}
+
+/* === GAME MENUS === */
+.menuBox, 
+.levelCompleteBox,
+.gameOverBox {
+  background: rgba(0,0,0,0.8);
+  border-radius: 20px;
+  padding: 20px;
+  color: white;
+  text-align: center;
+  font-size: 1.5em;
+  width: 90%;
+  max-width: 400px;
+  margin: auto;
+}
+
+/* === BUTTONS STYLE === */
+button, 
+.levelCompleteButtons,
+.gameOverButtons {
+  font-family: 'Micro 5', sans-serif;
+  border: none;
+  border-radius: 20px;
+  background-color: white;
+  color: rgb(28,134,69);
+  padding: 15px 40px;
+  font-size: 1.5em;
+  cursor: pointer;
+  transition: 200ms;
+}
+
+button:hover, 
+.levelCompleteButtons:hover,
+.gameOverButtons:hover {
+  background-color: rgb(28,134,69);
+  color: white;
+  transform: scale(1.05);
+}
+
+/* === LEVEL COMPLETE MENU === */
+.levelCompleteMenu {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0; left: 0;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+  flex-direction: column;
+}
+
+/* Buttons in level complete */
+.levelCompleteButtons {
+  width: 100px;
+  height: 100px;
+  margin: 20px;
+  fill: white;
+  cursor: pointer;
+  transition: transform 200ms;
+}
+
+.levelCompleteButtons:hover {
+  transform: scale(1.1);
+  fill: rgb(28,134,69);
+}
+
+/* === GAME OVER MENU === */
+.gameOverMenu {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0; left: 0;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+  flex-direction: column;
+}
+
+.gameOverButtons {
+  width: 100px;
+  height: 100px;
+  margin: 20px;
+  fill: white;
+  cursor: pointer;
+}
+
+.gameOverButtons:hover {
+  fill: rgb(200,0,0);
+}
+
+/* === RESPONSIVE ADJUSTMENTS FOR MOBILE === */
+@media (max-width: 600px) {
+  #hud {
+    font-size: 1em;
+  }
+
+  .menuBox, 
+  .levelCompleteBox, 
+  .gameOverBox {
+    font-size: 1.2em;
+    padding: 15px;
+  }
+
+  button, 
+  .levelCompleteButtons, 
+  .gameOverButtons {
+    font-size: 1.2em;
+    padding: 12px 30px;
+    width: 80px;
+    height: 80px;
+  }
+
+  .levelCompleteButtons, 
+  .gameOverButtons {
+    margin: 15px;
+  }
+}
